@@ -1,0 +1,20 @@
+﻿@model AuctionatorWebApp.ViewModels.ViewAuctionsViewModel
+@{
+    ViewBag.Title = "ViewMyAuctions";
+    if (Session["user"] == null)
+    {
+        Response.Redirect("~/Login/login");
+    }
+}
+<ul>
+    @if (Model.auctions != null)
+    {
+        foreach (var auction in Model.auctions)
+        {
+            <li>
+                @auction
+            </li>
+        }
+    }
+
+</ul>

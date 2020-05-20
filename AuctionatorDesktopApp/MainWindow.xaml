@@ -1,0 +1,20 @@
+﻿<Window x:Class="AuctionatorDesktopApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AuctionatorDesktopApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="498.8" Width="1172">
+    <Grid>
+        <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top">
+            <Button x:Name="Login" Content="Login" MinWidth="100" Click="LoginClick" IsEnabled="True"/>
+            <Button x:Name="Create" Content="Create User" MinWidth="100" Click="CreateUserClick" IsEnabled="True"/>
+            <Button x:Name="Auctions" Content="Auctions" MinWidth="100" Click="AuctionsClick" IsEnabled="False"/>
+            <Button x:Name="Bids" Content="Bids" MinWidth="100" Click="BidsClick" IsEnabled="False"/>
+            <Label Content="Loginstatus:"/>
+            <Label x:Name="LoginStatus" Content="No login"/>
+        </StackPanel>
+        <Frame x:Name="Main" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

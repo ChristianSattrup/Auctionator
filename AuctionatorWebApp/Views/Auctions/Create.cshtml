@@ -1,0 +1,23 @@
+﻿@model AuctionatorWebApp.ViewModels.CreateAuctionViewModel
+@{
+    ViewBag.Title = "CreateAuction";
+    if (Session["user"] == null)
+    {
+        Response.Redirect("~/Login/login");
+    }
+}
+
+    <div>
+        @using (Html.BeginForm("CreateAuction", "Auctions"))
+        {
+            <label>Item</label>
+            @Html.EditorFor(model => model.Item)
+            <label>Amount</label>
+            @Html.EditorFor(model => model.Amount)
+            <label>Starter Price</label>
+            @Html.EditorFor(model => model.StartPrice)
+            <label>Deadline</label>
+            @Html.EditorFor(model => model.Deadline)
+            <input type="submit" value="CreateAuction"/>
+        }
+    </div>

@@ -1,0 +1,38 @@
+﻿@model AuctionatorWebApp.ViewModels.LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <form action="/login/Autherize" method="get">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="useremailData" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="passwordData" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div>
+        @using (Html.BeginForm("Create", "Login"))
+        {
+            <label>Name</label>
+            @Html.EditorFor(model => model.Name)
+            <label>Email</label>
+            @Html.EditorFor(model => model.Email)
+            <label>Password</label>
+            @Html.EditorFor(model => model.Password)
+            <label>Contact Info</label>
+            @Html.EditorFor(model => model.ContactInfo)
+            <input type="submit" value="Create" />
+        }
+    </div>
+</body>
+</html>
